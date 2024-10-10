@@ -1,9 +1,7 @@
 package com.example.demo.modelo;
 
-import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 public class Supermercado {
 	private AdmProducto admProducto = new AdmProducto() ;
