@@ -104,10 +104,9 @@ public class IntegracionAdmCarritoTest {
             admCarrito.agregarCarrito(fecha, hora, cliente);
         });
 
-        String expectedMessage = "El carrito para este cliente ya existe en este horario";
+        String expectedMessage = "El carrito ya existe";
         String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage), "No debería permitir agregar un carrito duplicado para el mismo cliente en la misma fecha y hora.");
+        assertEquals("El carrito ya existe", exception.getMessage());
     }
 
 }

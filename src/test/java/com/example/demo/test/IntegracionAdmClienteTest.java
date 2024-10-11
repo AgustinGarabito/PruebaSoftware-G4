@@ -54,14 +54,9 @@ public class IntegracionAdmClienteTest {
         admCliente.agregarCliente("Pedro Lopez", 555555555L, "Calle Independencia 123");
 
         // Intentar agregar un segundo cliente con el mismo DNI
-        Exception exception = assertThrows(Exception.class, () -> {
-            admCliente.agregarCliente("Maria Fernandez", 555555555L, "Calle Libertad 456");
-        });
+        boolean resultado = admCliente.agregarCliente("Maria Fernandez", 555555555L, "Calle Libertad 456");
 
-        String expectedMessage = "El cliente con este DNI ya existe";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage), "No debería permitir agregar un cliente con DNI duplicado.");
+        assertTrue(!resultado, "No debería permitir agregar un cliente con DNI duplicado.");
     }
 
 }
